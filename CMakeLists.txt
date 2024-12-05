@@ -26,5 +26,8 @@ add_compile_options(-fsycl -ffp-model=precise -Wall -Wextra)
 add_link_options(-fsycl -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm)
 link_libraries(-lgtest -lgtest_main)
 
+# Examples and tests are not needed when another project uses the library
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 add_subdirectory(tests)
 add_subdirectory(examples)
+endif()

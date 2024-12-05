@@ -6,7 +6,7 @@ project(XeTLA)
 include(CTest)
 enable_testing()
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/tools/cmake")
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/tools/cmake")
 find_package(MKL REQUIRED)
 
 # debug option

@@ -23,7 +23,7 @@
 #include "buff_compare.hpp"
 #include "common/common.hpp"
 #include "gemm_gen.hpp"
-#include <CL/sycl.hpp>
+#include <sycl/sycl.hpp>
 
 using namespace cl::sycl;
 using namespace gpu;

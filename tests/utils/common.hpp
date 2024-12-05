@@ -25,7 +25,7 @@
 #include "gemm_gen.hpp"
 #include <sycl/sycl.hpp>
 
-using namespace cl::sycl;
+using namespace sycl;
 using namespace gpu;
 using namespace gpu::xetla;
 

@@ -71,8 +71,7 @@ constexpr gpu::xetla::argument_type mma_argument_type<fp16>() {
 ///
 template <gpu::xetla::argument_type arg_type>
 constexpr __ESIMD_NS::xmx::dpas_argument_type get_argument_type() {
-    static_assert(arg_type == gpu::xetla::argument_type::U1
-                    || arg_type == gpu::xetla::argument_type::S1
+    static_assert(arg_type == gpu::xetla::argument_type::S1
                     || arg_type == gpu::xetla::argument_type::U2
                     || arg_type == gpu::xetla::argument_type::S2
                     || arg_type == gpu::xetla::argument_type::U4
@@ -84,8 +83,6 @@ constexpr __ESIMD_NS::xmx::dpas_argument_type get_argument_type() {
                     || arg_type == gpu::xetla::argument_type::TF32,
             "Unsupported argument type");
     switch (arg_type) {
-        case gpu::xetla::argument_type::U1:
-            return __ESIMD_NS::xmx::dpas_argument_type::u1;
         case gpu::xetla::argument_type::S1:
             return __ESIMD_NS::xmx::dpas_argument_type::s1;
         case gpu::xetla::argument_type::U2:

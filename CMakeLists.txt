@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 project(XeTLA)
 
 include(CTest)
+include(GoogleTest)
 enable_testing()
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/tools/cmake")
@@ -24,7 +25,7 @@ endif ()
 
 add_compile_options(-fsycl -ffp-model=precise -Wall -Wextra)
 add_link_options(-fsycl -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm)
-link_libraries(-lgtest -lgtest_main)
+link_libraries(GTest::gtest_main)
 
 add_subdirectory(tests)
 add_subdirectory(examples)
